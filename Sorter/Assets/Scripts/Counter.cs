@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
-    public Text CounterText;
+    [SerializeField] Text CounterText;
 
     private int Count = 0;
 
@@ -18,6 +18,6 @@ public class Counter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Count += 1;
-        CounterText.text = "Count : " + Count;
+        CounterText.text = "" + Count;
     }
 }
