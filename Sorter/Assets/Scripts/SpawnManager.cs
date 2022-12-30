@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] int numberOfSpheres;
     [SerializeField] GameObject[] spheresPrefabs;
 
-    private float spawnHeight = 20;
+    private float spawnHeight = 17;
     private float spawnX = 2.1f;
     private float spawnZMin = 22.8f;
     private float spawnZMax = 27.2f;
@@ -47,4 +49,10 @@ public class SpawnManager : MonoBehaviour
     {
         return new Vector3(Random.Range(-spawnX, spawnX), spawnHeight, Random.Range(spawnZMin, spawnZMax));
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
